@@ -2,9 +2,10 @@ class_name FirstScene
 extends Control
 ## The first scene created in this project
 
-
 ## idleons owned by the Player
 var idleons: int = 0
+
+## how quickly idleons increase with button press
 var growth_rate: int = 5
 
 func _ready() -> void:

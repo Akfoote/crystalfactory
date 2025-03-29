@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgjaxh8ubnndy"]
+[gd_scene load_steps=5 format=3 uid="uid://dgjaxh8ubnndy"]
 
 [ext_resource type="Script" uid="uid://dym45xuvntwdd" path="res://scenes/first_scene/first_scene.gd" id="1_kas44"]
+[ext_resource type="Script" uid="uid://cnhg05d8jb4al" path="res://scenes/first_scene/button.gd" id="2_ive1o"]
+[ext_resource type="AudioStream" uid="uid://cgwpe36ct6v1s" path="res://assets/audio/click1.ogg" id="3_tgdok"]
+[ext_resource type="AudioStream" uid="uid://bigqe5w34o5p7" path="res://assets/audio/click2.ogg" id="4_sj4b4"]
 
 [node name="FirstScene" type="Control"]
 layout_mode = 3
@@ -32,10 +35,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 160.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Grab Idleons"
+script = ExtResource("2_ive1o")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("3_tgdok")
+volume_db = -5.0
+
+[node name="ButtonRelease" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("4_sj4b4")
+volume_db = -10.0
