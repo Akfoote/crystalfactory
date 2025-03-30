@@ -3,7 +3,8 @@ extends Control
 ## The first scene created in this project
 
 ## idleons owned by the Player
-var idleons: int = 0
+#var idleons: int = 0
+var data:Data = Game.ref.data
 
 ## how quickly idleons increase with button press
 var growth_rate: int = 5
@@ -17,7 +18,7 @@ func _on_button_pressed() -> void:
 	update_label()
 
 func update_idleons(x: int) -> void:
-	idleons += x
+	data.resources.idleons += x
 	
 func update_label() -> void:
-	(get_node("IdleonsLabel") as Label).text = "Idleons: %s" %idleons
+	(get_node("IdleonsLabel") as Label).text = "Idleons: %s" %data.resources.idleons

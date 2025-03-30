@@ -15,20 +15,17 @@ func _ready() -> void:
 	button_up.connect(_on_button_up)
 	
 
-func _shrink():
+func _shrink() -> void:
 	var tween:Tween = create_tween()
-	print("shrinking")
 	tween.tween_property(self, "scale", Vector2(1-delta, 1-delta), toggle_speed)
 
 func _expand() -> void:
 	var tween:Tween = create_tween()
-	print("expanding")
 	await tween.tween_property(self, "scale", Vector2(1+delta, 1+delta), toggle_speed).finished
 	_normalize()
 
 func _normalize() -> void:
 	var tween:Tween = create_tween()
-	print("normalizing")
 	tween.tween_property(self, "scale", Vector2(1,1), toggle_speed)
 
 	
