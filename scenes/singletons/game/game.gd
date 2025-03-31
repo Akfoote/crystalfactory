@@ -13,5 +13,18 @@ func _init() -> void:
 	else: 
 		queue_free()
 
+const PATH:String = "user://tableforglobules.tres"
 ## Load in global data:
-var data:Data = Data.new()
+var data:Data = load_data()
+
+func save_data() -> void:
+	ResourceSaver.save(data,PATH)
+
+func _exit_tree() -> void:
+	save_data()
+
+func load_data() -> Data:
+	if ResourceLoader.exists(PATH):
+		return load(PATH)
+	else: 
+		return Data.new()
