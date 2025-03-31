@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CrystalFactory"
-run/main_scene="uid://dgjaxh8ubnndy"
+run/main_scene="uid://6ix502g4qf5s"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
